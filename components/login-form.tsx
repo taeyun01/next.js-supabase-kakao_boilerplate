@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { KakaoLoginButton } from "@/components/kakao-login-button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -57,6 +58,10 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
+          <KakaoLoginButton />
+          <div className="my-4 text-center text-xs text-muted-foreground">
+            or
+          </div>
           <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
