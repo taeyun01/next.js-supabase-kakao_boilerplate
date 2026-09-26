@@ -1,11 +1,11 @@
-import { LoginForm } from "@/components/login-form";
+import { KakaoLoginButton } from "@/components/kakao-login-button";
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+    <main className="flex min-h-svh items-center justify-center p-6">
       <div className="w-full max-w-sm">
-        <LoginForm />
+        <KakaoLoginButton />
       </div>
-    </div>
+    </main>
   );
 }

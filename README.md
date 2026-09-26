@@ -27,7 +27,11 @@ npm run dev
   - `https://<배포도메인>/auth/callback`
 
 ## 구조
+- `app/page.tsx` — 빈 홈 (여기서부터 시작)
+- `app/auth/login` — 카카오 로그인 페이지 (버튼만)
+- `app/protected` — 로그인해야 접근 가능한 페이지 (로그인 후 기본 이동 경로)
+- `app/test` — 카카오/Supabase 설정 점검 페이지. **배포 전 `app/test`와 `lib/supabase/proxy.ts`의 `/test` 줄 삭제**
 - `components/kakao-login-button.tsx` — 카카오 로그인 버튼 (`next` prop으로 로그인 후 이동 경로 지정)
 - `app/auth/callback/route.ts` — OAuth code → 세션 교환
-- `proxy.ts` / `lib/supabase/*` — 세션 갱신, 미로그인 시 `/auth/login` 리다이렉트
-- 이메일 로그인은 스타터 그대로 남아 있음. 안 쓰면 `components/*-form.tsx`, `app/auth/*` 해당 페이지 삭제.
+- `lib/supabase/*`, `proxy.ts` — Supabase 클라이언트, 세션 갱신, 미로그인 시 `/auth/login` 리다이렉트
+- UI는 shadcn `button`, `card`만 남김. 더 필요하면 `npx shadcn@latest add <name>`
